@@ -10,3 +10,5 @@
 * [配置 Gitlab Runner](configure.md)
 * [问题排查](troubleshooting.md)
 * [非功能问题](nonfunctional.md)
+    * [minio对象存储](object-minio.md)
+* [最佳实践](testpractice.md)

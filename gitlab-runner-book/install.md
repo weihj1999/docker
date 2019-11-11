@@ -1,7 +1,7 @@
 # 安装Gitlab Runner
 Gitlab Runner可以在GNU/Linux, macOS, FreeBSD以及Windows操作系统上，支持使用docker安装，也支持binary手工安装，或者使用rpm/deb包安装（通常需要用到Gitlab提供的源）
 
-## 在容器中运行Gitlab Runner
+## 在容器中运行Gitlab-runner
 ## 1. 镜像
 Gitlab Runner容器镜像（基于Ubuntu或者Alpine linxu构建）被设计为可以运行标准gitlab-runner命令的包装器，就像在主机上运行gitlab-runner一样。
 
