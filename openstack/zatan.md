@@ -156,7 +156,7 @@ docker service create ... --secret source=my-erlang-cookie,target=/var/lib/rabbi
 https://www.youtube.com/watch?v=w2kGd2VRJWE
 
 根据这个视频的理解，补充一个遗留问题：
-![容器网络草图](/chapter5/images/container-overlay-001.PNG)
+![容器网络草图](/docker//openstack/images/container-overlay-001.PNG)
 
 
 
