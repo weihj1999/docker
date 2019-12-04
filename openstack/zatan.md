@@ -52,16 +52,15 @@ https://github.com/erasys/mariadb-ha-test
 https://docs.openstack.org/mitaka/install-guide-ubuntu/environment-messaging.html
 三大步骤：
 1. 安装包
-
-
+``` 
     # apt-get install rabbitmq-server
+``` 
 2. 创建openstack用户
-
-
+``` 
     # rabbitmqctl add_user openstack RABBIT_PASS
     Creating user "openstack" ...
     ...done.
-
+``` 
 3. 给用户授权
 
 ```    
@@ -170,27 +169,23 @@ https://github.com/obedmr/docker-keystone
 主要说明：
 
 1. 基于dockerfile构建镜像
-
-
+``` 
     docker build -t obedmr/keystone .
-
+``` 
 2. 连接的是mariaDB
-
-
+``` 
     docker run --name mariadb -e MYSQL_ROOT_PASSWORD=secret -e MYSQL_DATABASE=keystone -e MYSQL_USER=keystone -e MYSQL_PASSWORD=secret -d mariadb
-
+``` 
 3. 启动容器镜像
-
-
+``` 
     docker run -d -p 5000:5000 -p 35357:35357 --link mariadb:mariadb -e DATABASE_HOST=mariadb -e KEYSTONE_DB_USER=keystone -e KEYSTONE_DB_PASSWORD=secret -e KEYSTONE_DB_NAME=keystone --name keystone obedmr/keystone
-
+``` 
 通常在容器启动后，需要进行定制化部分，可以在i东容器的时候加上参数：
-
+``` 
     -v <path>/custom-post-keystone-script.sh:/usr/bin/post-keystone.sh
-
+``` 
 4. 测试验证
-
-
+``` 
     docker exec -it  keystone bash
     # Inside the container
     root@26bd2b8a8a60 /root # source openrc
@@ -200,7 +195,7 @@ https://github.com/obedmr/docker-keystone
     +----------------------------------+-------+
     | 24620586335a473fb56fc2be2f6bfb53 | admin |
     +----------------------------------+-------+
-
+``` 
 主要分析：
 
 1. 环境变量说明：
@@ -228,7 +223,7 @@ https://docs.openstack.org/keystone/pike/admin/identity-bootstrap.html
 keystone部署和配置完成后，在使用之前必须进行初始化，提供初始化数据，这个过程称为bootstrapping，引导过程，主要包含了： 创建用户，project，domain，服务，endpoint等等；引导的目的是在系统里面准备好足够的信息，确保系统可以通过认证流程正常访问API：
 
 比如：<br>
-
+``` 
     $ keystone-manage bootstrap \
         --bootstrap-password s3cr3t \
         --bootstrap-username admin \
@@ -239,7 +234,7 @@ keystone部署和配置完成后，在使用之前必须进行初始化，提供
         --bootstrap-admin-url http://localhost:35357 \
         --bootstrap-public-url http://localhost:5000 \
         --bootstrap-internal-url http://localhost:5000
-
+``` 
 - 如果提供了post-deploy脚本，则执行；
 
 ## 语录
