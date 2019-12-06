@@ -11,3 +11,4 @@ Reliable, Portable, Out-of-box, and easy life cycle management.
 
 # 互联网收集
 [Redhat容器化之路](https://www.redhat.com/en/blog/containerize-openstack-docker)
+[Openstack的容器化](https://www.slideshare.net/NaleeJang/how-to-operate-containerized-openstack-178346398)
