@@ -6,6 +6,7 @@
 
 # 口号
 容器化部署的目标是把openstack的部署，交付，运维做到极简
+
 Reliable, Portable, Out-of-box, and easy life cycle management.
 
 # 互联网收集
