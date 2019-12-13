@@ -38,7 +38,7 @@ $docker network create -d overlay --subnet=192.168.10.0/24 my-overlay-net
 
 在不使用swarm的情况下使用overlay网络：
 
-https://docs.docker.com/engine/userguide/networking/#an-overlay-network-without-swarm-mode
+https://medium.com/@ahakimx/overlay-network-without-swarm-mode-586318724c62
 
 ### 1.2.3 Macvlan网络
 macvlan驱动通过layer2 Segment将Docker容器直接连接到主机网络接口。 无需使用端口映射或网络地址转换（NAT），可以为容器分配一个公共IP地址，该地址可从外部访问。 由于数据包直接从Docker主机网络接口控制器（NIC）路由到容器，因此macvlan网络中的延迟很短。
