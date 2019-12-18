@@ -75,3 +75,10 @@ Pure Storage AIRI是另一个DGX-1集成系统，它使用Pure的FlashBlade AFA�
 Pure Storage的AIRI系统架构
  
 深度学习推理系统对存储子系统的要求较低，通常可以通过在x86服务器中使用本地SSD硬盘来实现。虽然推理平台通常是具有本地SSD硬盘或NVMe插槽的传统1U和2U服务器设计，但它们越来越多地包括计算加速器，如Nvidia T4 GPU或可以将一些深度学习操作编译到硬件中的FPGA。
+
+## 延伸阅读
+
+1. Gartner数据分析报告
+
+https://www.gartner.com/smarterwithgartner/gartner-top-10-data-analytics-trends/
+
