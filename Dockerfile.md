@@ -39,7 +39,7 @@ $ docker run myimage1:1.0
 
 Dockerfile Reference
 
-## 1.2 基础教程
+## 1.2 基础指令
 
 1. docker build
 
