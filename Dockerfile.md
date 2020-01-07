@@ -1,6 +1,7 @@
 # 1. Dockerfile快速学习
 
 ## 1.1 基础教程
+
 主要内容：
 1. 什么是Dockerfile？
 2. 如何创建Dockderfile？
@@ -836,6 +837,7 @@ CMD ["--help"]
 尽可能通过字母数字排序多行参数来简化以后的更改。 这有助于避免软件包重复，并使列表更易于更新。 这也使PRs易于阅读和查看。 在反斜杠（\）之前添加空格也有帮助。
 
 这里有个构建包依赖的镜像样例：
+
 ```bash
 RUN apt-get update && apt-get install -y \
   bzr \
@@ -1129,6 +1131,8 @@ RUN groupadd -r postgres && useradd --no-log-init -r -g postgres postgres
 ```
 
 10. WORKDIR
+
 为了清楚和可靠，您应该始终为WORKDIR使用绝对路径。另外，您应该使用WORKDIR而不是增加诸如**RUN cd … && do-something**之类的指令，这些指令难以阅读，排除故障和维护。
 
 11. ONBUILD
+
