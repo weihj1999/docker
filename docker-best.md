@@ -217,4 +217,55 @@ CMD ["localhost"]            /bin/ping -c 3 localhost
 
 如果你想让你的docker image做真正的工作, 一定会在Dockerfile里用到ENTRYPOINT或是CMD. 但是请注意,这2个命令不是互斥的. 在很多情况下, 你可以组合ENTRYPOINT和CMD命令, 提升最终用户的体验.
 
+# 2. 参数探秘
+
+## 一般原则
+
+如果说今天您可以学到一个经验 ，那就是要遵循以下一般原则：
+
+ENTRYPOINT + CMD = 默认容器命令参数
+
+但须满足下列条件：
+
+1. 必须都可在运行时上单独覆盖；
+2. 任何一个或两者都可为空；并且
+3. 其中的加号 (+) 是指 ENTRYPOINT 与 CMD 在阵列环境中分别串联。
+
+## 参数始终为阵列(Json Array)
+
+需要注意的是，在 Dockerfile 中，ENTRYPOINT 和 CMD 始终将转换为阵列 — 即使您声明它们为Json字符串。（但为避免歧义，我始终建议将它们声明为阵列。）
+
+假设我们声明一个用于启动 Web 服务器的 CMD 如下：
+```bash
+CMD /usr/bin/httpd -DFOREGROUND
+```
+Docker 会自动将 CMD 转换为阵列，如下所示：
+```bash
+["/bin/sh", "-c", "/usr/bin/httpd -DFOREGROUND"]
+```
+这同样适用于 ENTRYPOINT 参数。
+
+因此，当我们声明 ENTRYPOINT 和 CMD 时，ENTRYPOINT 将是一个列表，这两个参数将组合成为一个默认的参数列表 — 即使我们声明 CMD 为字符串
+
+## 我们何时应该使用 ENTRYPOINT？ CMD 呢？
+假设我们为某个项目构建自己的 Dockerfile。我们已经了解了 ENTRYPOINT 和 CMD 如何结合起来构建容器的默认参数列表的原理。但现在我们需要知道如何选择：何时建议使用 ENTRYPOINT，何时又建议使用 CMD？
+
+您所做的选择基本上属于一种艺术，它严重依赖您的使用案例。但我的经验是，ENTRYPOINT 几乎适合我遇到的所有案例。可以考虑下列使用案例：
+
+### 封套
+一些映像包含所谓的“封套”，将原有的程序进行装饰或者进行其他准备，以便于在容器化环境中应用。例如，假设您的服务设计为从文件读取配置，而非从环境变量读取。则在这种情况下，您可以包含一个将利用环境变量生成配置文件的封套脚本，然后在最后调用 exec /path/to/app 以启动应用程序。
+
+声明指向封套的 ENTRYPOINT 就是确保封套始终运行的一个极佳方法，而不论将何参数发送到 docker run。
+
+### 单用途映像
+如果您的映像仅用于执行一个操作（ 例如运行 Web 服务器），则使用 ENTRYPOINT 来指定服务器二进制代码和任何强制参数的路径。一个典型示例是 nginx 映像，它的唯一用途是运行 nginx Web 服务器。这使它本身拥有一个天然的命令行调用：docker run nginx。然后您可以顺理成章地在命令行后添加程序命令，例如 docker run nginx -c /test.conf，就好比您在运行无 Docker 的 nginx。
+
+### 多模式映像
+支持多种“模式”的映像在 docker run <image> 上使用第一个参数来指定映射到模式的谓语（例如 shell、migrate 或 debug），也十分常见。对于此类使用案例，我建议 ENTRYPOINT 的设置应指向一个将解释动作参数并根据其值执行相关操作的脚本，例如：
+
+ENTRYPOINT ["/bin/parse_container_args"]
+这些参数将在调用时通过 ARGV[1..n] 或 $1、$2 等发送到入口点。
+
+## 小结
+Docker 拥有极其强大与灵活的映像构建功能，但在确定如何构建容器的默认运行时参数方面可能极具挑战。但愿本文可以帮助您更加清楚参数-汇编机制，以及如何在您的环境中发挥它们的最佳作用。
 
