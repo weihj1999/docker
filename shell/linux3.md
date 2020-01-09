@@ -1,7 +1,7 @@
-# 4 Linux 系统目录结构
+# 3 Linux 系统目录结构
 登录系统后，在当前命令窗口下输入命令：
 ```bash
- ls / 
+ ls /
 ```
 你会看到如下图所示:
 ![文件](https://www.runoob.com/wp-content/uploads/2014/06/4_20.png)
