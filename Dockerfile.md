@@ -573,7 +573,7 @@ EXPOSE 80 443
 VOLUME ["/var/www", "/var/log/apache2", "/etc/apache2"]
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 ```
-如果需要写一个启动脚本来做为单一的可执行程序，需要确保可执行程序能够接受UNIX signal，通过使用exec和gosu命令：
+如果需要写一个启动脚本来做为单一的可执行程序，通过使用exec和gosu命令, 可以确保可执行程序能够接受UNIX signal，：
 
 ```bash
 #!/usr/bin/env bash
@@ -591,7 +591,7 @@ fi
 
 exec "$@"
 ```
-最后，如果您需要在关闭时进行一些额外的清理（或与其他容器通信），或协调多个可执行文件，则可能需要确保ENTRYPOINT脚本接收Unix信号，然后将其传递，然后 还有更多工作：
+最后，如果您需要在关闭时进行一些额外的清理（或与其他容器通信）工作，或协调多个可执行文件，则需要确保ENTRYPOINT脚本接收Unix信号，然后将其传递，然后 还有更多工作：
 ```bash
 #!/bin/sh
 # Note: I've written this using sh so it works in the busybox container too
