@@ -1,4 +1,4 @@
-# 6 Linux 文件与目录管理
+# 5 Linux 文件与目录管理
 我们知道Linux的目录结构为树状结构，最顶级的目录为根目录 /。
 
 其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。
@@ -10,7 +10,7 @@
 - 相对路径：<br>
 路径的写法，不是由 / 写起，例如由 /usr/share/doc 要到 /usr/share/man 底下时，可以写成： cd ../man 这就是相对路径的写法啦！
 
-## 6.1 处理目录的常用命令
+## 5.1 处理目录的常用命令
 接下来我们就来看几个常见的处理目录的命令吧：
 
 - ls: 列出目录
@@ -23,7 +23,7 @@
 - mv: 移动文件与目录，或修改文件与目录的名称
 你可以使用 man [命令] 来查看各个命令的使用文档，如 ：man cp。
 
-### 6.1.1 ls (列出目录)
+### 5.1.1 ls (列出目录)
 在Linux系统当中， ls 命令可能是最常被运行的。
 
 语法：
@@ -42,7 +42,7 @@
 ```
 [root@www ~]# ls -al ~
 ```
-### 6.1.2 cd (切换目录)
+### 5.1.2 cd (切换目录)
 cd是Change Directory的缩写，这是用来变换工作目录的命令。
 
 语法：
@@ -68,7 +68,7 @@ cd [相对路径或绝对路径]
 ```
 接下来大家多操作几次应该就可以很好的理解 cd 命令的。
 
-### 6.1.3 pwd (显示目前所在的目录)
+### 5.1.3 pwd (显示目前所在的目录)
 pwd 是 Print Working Directory 的缩写，也就是显示目前所在目录的命令。
 ```
 [root@www ~]# pwd [-P]
@@ -94,7 +94,7 @@ lrwxrwxrwx 1 root root 10 Sep  4 17:54 /var/mail -> spool/mail
 # 看到这里应该知道为啥了吧？因为 /var/mail 是连结档，连结到 /var/spool/mail 
 # 所以，加上 pwd -P 的选项后，会不以连结档的数据显示，而是显示正确的完整路径啊！
 ```
-### 6.1.4 mkdir (创建新目录)
+### 5.1.4 mkdir (创建新目录)
 如果想要创建新的目录的话，那么就使用mkdir (make directory)吧。
 
 语法：
@@ -129,7 +129,7 @@ drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
 
 如果我们使用 -m ，如上例我们给予 -m 711 来给予新的目录 drwx--x--x 的权限。
 
-### 6.1.5 rmdir (删除空的目录)
+### 5.1.5 rmdir (删除空的目录)
 语法：
 ```
 rmdir [-p] 目录名称
@@ -159,7 +159,7 @@ drwx--x--x  2 root  root 4096 Jul 18 12:54 test2
 
 不过要注意的是，这个 rmdir 仅能删除空的目录，你可以使用 rm 命令来删除非空目录。
 
-### 6.1.6 cp (复制文件或目录)
+### 5.1.6 cp (复制文件或目录)
 cp 即拷贝文件和目录。
 
 语法:
@@ -193,7 +193,7 @@ cp 即拷贝文件和目录。
 [root@www ~]# cp -i ~/.bashrc /tmp/bashrc
 cp: overwrite `/tmp/bashrc'? n  <==n不覆盖，y为覆盖
 ```
-### 6.1.7 rm (移除文件或目录)
+### 5.1.7 rm (移除文件或目录)
 语法：
 ```
  rm [-fir] 文件或目录
@@ -211,7 +211,7 @@ rm: remove regular file `bashrc'? y
 ```
 如果加上 -i 的选项就会主动询问喔，避免你删除到错误的档名！
 
-### 6.1.8 mv (移动文件与目录，或修改名称)
+### 5.1.8 mv (移动文件与目录，或修改名称)
 语法：
 ```
 [root@www ~]# mv [-fiu] source destination
@@ -235,7 +235,7 @@ rm: remove regular file `bashrc'? y
 ```
 [root@www tmp]# mv mvtest mvtest2
 ```
-## 6.2 Linux 文件内容查看
+## 5.2 Linux 文件内容查看
 Linux系统中使用以下命令来查看文件的内容：
 
 - cat  由第一行开始显示文件内容
@@ -248,7 +248,7 @@ Linux系统中使用以下命令来查看文件的内容：
 
 你可以使用 man [命令]来查看各个命令的使用文档，如 ：man cp。
 
-### 6.2.1. cat
+### 5.2.1. cat
 由第一行开始显示文件内容
 
 语法：
@@ -270,7 +270,7 @@ cat [-AbEnTv]
 CentOS release 6.4 (Final)
 Kernel \r on an \m
 ```
-### 6.2.2 tac
+### 5.2.2 tac
 tac与cat命令刚好相反，文件内容从最后一行开始显示，可以看出 tac 是 cat 的倒着写！如：
 
 ```
@@ -279,7 +279,7 @@ tac与cat命令刚好相反，文件内容从最后一行开始显示，可以�
 Kernel \r on an \m
 CentOS release 6.4 (Final)
 ```
-### 6.2.3 nl
+### 5.2.3 nl
 显示行号
 
 语法：
@@ -303,7 +303,7 @@ nl [-bnw] 文件
      1  CentOS release 6.4 (Final)
      2  Kernel \r on an \m
 ```
-### 6.2.4 more
+### 5.2.4 more
 一页一页翻动
 ```
 [root@www ~]# more /etc/man_db.config 
@@ -324,7 +324,7 @@ nl [-bnw] 文件
 - q             ：代表立刻离开 more ，不再显示该文件内容。
 - b 或 [ctrl]-b ：代表往回翻页，不过这动作只对文件有用，对管线无用。
 
-### 6.2.5 less
+### 5.2.5 less
 一页一页翻动，以下实例输出/etc/man.config文件的内容：
 ```
 [root@www ~]# less /etc/man.config
@@ -347,7 +347,7 @@ less运行时可以输入的命令有：
 - N         ：反向的重复前一个搜寻 (与 / 或 ? 有关！)
 - q         ：离开 less 这个程序；
 
-### 6.2.6 head
+### 5.2.6 head
 取出文件前面几行
 
 语法：
@@ -365,7 +365,7 @@ head [-n number] 文件
 ```
 [root@www ~]# head -n 20 /etc/man.config
 ```
-### 6.2.7 tail
+### 5.2.7 tail
 取出文件后面几行
 
 语法：
