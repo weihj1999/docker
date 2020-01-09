@@ -4,9 +4,11 @@
  ls /
 ```
 你会看到如下图所示:
+
 ![文件](https://www.runoob.com/wp-content/uploads/2014/06/4_20.png)
 
 树状目录结构：
+
 ![目录结构](https://www.runoob.com/wp-content/uploads/2014/06/003vPl7Rty6E8kZRlAEdc690.jpg)
 
 以下是对这些目录的解释：
