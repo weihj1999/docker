@@ -269,3 +269,120 @@ ENTRYPOINT ["/bin/parse_container_args"]
 ## 小结
 Docker 拥有极其强大与灵活的映像构建功能，但在确定如何构建容器的默认运行时参数方面可能极具挑战。但愿本文可以帮助您更加清楚参数-汇编机制，以及如何在您的环境中发挥它们的最佳作用。
 
+# 3. 常用指令操作
+
+1. 加上-d参数可以容器在后台运行
+```bash
+$docker run --name "mytest" -d nginx
+```
+2. 查看镜像的执行和运行历史
+```bash
+$docker history nginx
+```
+3. 删除所有容器
+```bash
+$docker rm $(docker ps -qa)
+```
+4. 查看所有镜像，包含缓存的镜像
+```bash
+$docker images -a
+```
+
+# 4. 官方镜像研究
+
+## 4.1 HTTPD
+下面的dockerfile是网友基于正常安装的设计，重点是CMD和ENTRYPOINT的组合使用：
+```bash
+FROM ubuntu:12.04
+
+RUN apt-get update
+RUN apt-get install -y apache2
+
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+
+RUN echo 'Hello, docker' > /var/www/index.html
+
+ENTRYPOINT ["/usr/sbin/apache2"]
+CMD ["-D", "FOREGROUND"]
+```
+
+官方（由docker社区维护的）镜像库：
+
+https://github.com/docker-library/httpd
+
+这种镜像是基于源代码安装的，玩的比较复杂，后面研究。
+
+类似的还有mariadb：
+
+https://github.com/docker-library/mariadb
+
+## 4.2 Mariadb的centos镜像
+https://hub.docker.com/r/centos/mariadb/
+
+这个是由CentOS官方维护的，基于CentOS7和Stephen Tweedie的Dockerfile编写的,设计初衷是给openshift使用的。
+
+CentOS也集中开发了一批常用的软件应用的容器化实践。
+
+```bash
+FROM centos:centos7
+
+MAINTAINER The CentOS Project <cloud-ops@centos.org>
+LABEL Vendor="CentOS"
+LABEL License=GPLv2
+LABEL Version=5.5.41
+
+LABEL Build docker build --rm --tag centos/mariadb55 .
+
+RUN yum -y install --setopt=tsflags=nodocs epel-release && \
+    yum -y install --setopt=tsflags=nodocs mariadb-server bind-utils pwgen psmisc hostname && \
+    yum -y erase vim-minimal && \
+    yum -y update && yum clean all
+
+
+# Fix permissions to allow for running on openshift
+COPY fix-permissions.sh ./
+RUN ./fix-permissions.sh /var/lib/mysql/   && \
+    ./fix-permissions.sh /var/log/mariadb/ && \
+    ./fix-permissions.sh /var/run/
+
+COPY docker-entrypoint.sh /
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
+# Place VOLUME statement below all changes to /var/lib/mysql
+VOLUME /var/lib/mysql
+
+# By default will run as random user on openshift and the mysql user (27)
+# everywhere else
+USER 27
+
+EXPOSE 3306
+CMD ["mysqld_safe"]
+```
+
+简单分析：
+1. 安装mariadb-server以及其他安装包
+2. 脚本修复用户权限问题
+3. 设置docker-entrypoint.sh，支持默认root用户，数据库的创建
+4. 传入CMD给ENTRYPOINT作为默认启动参数
+
+脚本小技巧
+
+1. docker-entrypoint.sh
+
+最后一行
+```bash
+exec "$@"
+```
+$@ 表示所有传递给脚本的参数。和$\*是一样的，都表示所有命令行参数。通常用来简单的把所有参数传递给其他的应用。
+
+小差别区分：
+```bash
+$@ = stores all the arguments in a list of string
+$* = stores all the arguments as a single string
+$# = stores the number of arguments
+```
+
+也可以用来做后续的引用
