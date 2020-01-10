@@ -4,3 +4,7 @@
 
 领导力的书籍
 - https://www.youtube.com/watch?v=K1day--u4iI
+
+经济的书
+- https://www.youtube.com/watch?v=jCH2JcPGPsA
+
