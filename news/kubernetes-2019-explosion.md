@@ -7,6 +7,8 @@ https://www.sdxcentral.com/articles/news/kubernetes-opportunities-challenges-esc
 
 Dan Meyer
 
+![大容器](https://www.sdxcentral.com/cdn-cgi/image/w=736,h=368,fit=scale-down,f=auto,q=85/https://www.sdxcentral.com/wp-content/uploads/2019/12/Ericsson-Reveals-Container-Based-5G-%E2%80%98First%E2%80%99-With-Telstra.jpg)
+
 如果说2018年是Kubernetes进入主流的一年，那么2019年就是现实的一年。现实是，尽管Kubernetes很棒，但也很难。
 
 Kubernetes生态系统通过保持按季度发布平台更新的步伐，在推动市场方面发挥了通常的作用。 这种馈送(feeding)帮助Kubernetes继续推动了云市场的发展。 但是，持续的安全性和商业化挑战表明，没有挑战的增长不会到来。
