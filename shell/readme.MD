@@ -2,8 +2,17 @@
 
 教程分为两部分，Linux教程和Shell教程
 
-* [1. Linux教程](linux1.md)
-* [2. Shell教程](shell0.md)
+* [1. Linux 教程](linux0.md)
+  * [1.1 Linux 简介](linux1.md)
+  * [1.2 Linux 系统启动过程](linux2.md)
+  * [1.3 Linux 系统目录结构](linux3.md)
+  * [1.4 Linux 文件基本属性](linux4.md)
+  * [1.5 Linux 文件与目录管理](linux5.md)
+  * [1.6 Linux 用户和用户组管理](linux6.md)
+  * [1.7 Linux 磁盘管理](linux7.md)
+  * [1.8 Linux vi/vim](linux8.md)
+  * [1.9 Linux yum 命令](linux9.md)  
+* [2. Shell 教程](shell0.md)
   * [2.1 Shell 变量](shell1.md)
   * [2.2 Shell 传递参数](shell2.md)
   * [2.3 Shell 数组](shell3.md)
