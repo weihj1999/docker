@@ -1,7 +1,7 @@
 # Facebook内部高效工作PPT指南
 
 1、时间常有，时间优先。
-![facebook高效工作](/docker/onlinebooks/images/facebook-001.png)
+![facebook高效工作](images/facebook-001.png)
 
 2、时间总会有的：每天只计划 4～5 小时真正的工作。
 ![facebook高效工作](images/facebook-002.png)
