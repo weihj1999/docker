@@ -2535,3 +2535,195 @@ print ("a + (b * c) / d 运算结果为：", e)
 a + (b * c) / d 运算结果为： 50.0
 ```
 
+## 条件控制
+
+如果用一句话来概括条件判断-就是让计算机在合适的情况下做合适的事情。
+
+计算机其实超听话的，他会替你做一些复杂又重复的事情，但是你需要先讲清楚规则，他才会按照你的要求做事情，要不然，情况无法想象（班主任想像了一下一大堆机器人攻陷地球的情景，好可怕）
+
+条件判断有三个重要的知识点，一一来学习一下（答应我一定要好好学习这里，不要让机器人未来有机会攻陷地球）
+
+if
+
+if..else
+
+if..elif..else
+
+Python3条件控制
+
+Python条件语句是通过一条或多条语句的执行结果（True或者False）来决定执行的代码块。
+
+网上找一个条件控制的示意图，包含条件，条件代码，执行分支等
+
+1. IF语句
+
+Python中if语句的一般形式如下所示：
+```
+if condition_1: statement_block_1 
+elif condition_2: statement_block_2 
+else: statement_block_3
+```
+- 如果 "condition_1" 为 True 将执行 "statement_block_1" 块语句
+- 如果 "condition_1" 为False，将判断 "condition_2"
+- 如果"condition_2" 为 True 将执行 "statement_block_2" 块语句
+- 如果 "condition_2" 为False，将执行"statement_block_3"块语句
+
+Python 中用 elif 代替了 else if，所以if语句的关键字为：**if – elif – else**。
+
+注意：
+
+- 1、每个条件后面要使用冒号 :，表示接下来是满足条件后要执行的语句块。
+- 2、使用缩进来划分语句块，相同缩进数的语句在一起组成一个语句块。
+- 3、在Python中没有switch – case语句。
+
+实例
+以下是一个简单的 if 实例：
+
+```python
+#!/usr/bin/python3 
+var1 = 100 
+if var1: 
+  print ("1 - if 表达式条件为 true") 
+  print (var1) 
+  var2 = 0 
+  if var2: 
+    print ("2 - if 表达式条件为 true") 
+    print (var2) 
+    print ("Good bye!")
+```
+
+执行以上代码，输出结果为：
+```
+1 - if 表达式条件为 true
+100
+Good bye!
+```
+
+从结果可以看到由于变量 var2 为 0，所以对应的 if 内的语句没有执行。
+
+以下实例演示了狗的年龄计算判断：
+
+```python
+#!/usr/bin/python3 
+age = int(input("请输入你家狗狗的年龄: ")) 
+print("") 
+if age < 0: 
+  print("你是在逗我吧!") 
+elif age == 1: 
+  print("相当于 14 岁的人。") 
+elif age == 2: 
+  print("相当于 22 岁的人。") 
+elif age > 2: 
+  human = 22 + (age -2)*5 
+  print("对应人类年龄: ", human) 
+  ### 退出提示 
+  input("点击 enter 键退出")
+```
+
+将以上脚本保存在dog.py文件中，并执行该脚本：
+```
+$ python3 dog.py 
+请输入你家狗狗的年龄: 1
+
+相当于 14 岁的人。
+点击 enter 键退出
+```
+
+以下为if中常用的操作运算符:
+
+| 操作符	| 描述 | 
+| --- | --- | 
+| <	| 小于| 
+| <=	| 小于或等于| 
+| >	| 大于| 
+| >=	| 大于或等于| 
+| ==	| 等于，比较两个值是否相等| 
+| !=	| 不等于| 
+
+实例
+```python
+#!/usr/bin/python3 
+# 程序演示了 == 操作符 
+# 使用数字 
+print(5 == 6) 
+# 使用变量 
+x = 5 
+y = 8 
+print(x == y)
+```
+以上实例输出结果：
+```
+False
+False
+```
+high_low.py文件演示了数字的比较运算：
+
+实例（班主任故意把缩进弄成乱序的，怕你直接复制过去运行了，在这里你能不能自己想想，缩进是怎么缩进的？给你点提示：你如果是缩进没缩对的话，可能会出现这种报错：INDENTATIONERROR: EXPECTED AN INDENTED BLOCK）
+```python
+#!/usr/bin/python3  
+# 该实例演示了数字猜谜游戏 
+number = 7 
+guess = -1 
+print("数字猜谜游戏!") 
+while guess != number: 
+  guess = int(input("请输入你猜的数字：")) 
+  if guess == number: 
+    print("恭喜，你猜对了！") 
+  elif guess < number: 
+    print("猜的数字小了...") 
+  elif guess > number: 
+    print("猜的数字大了...")
+```
+执行以上脚本，实例输出结果如下：
+```
+$ python3 high_low.py 
+数字猜谜游戏!
+请输入你猜的数字：1
+猜的数字小了...
+请输入你猜的数字：9
+猜的数字大了...
+请输入你猜的数字：7
+恭喜，你猜对了！
+```
+
+2. IF嵌套
+在嵌套 if 语句中，可以把 if...elif...else 结构放在另外一个 if...elif...else 结构中。
+```
+if 表达式1:
+语句
+if 表达式2:
+语句
+elif 表达式3:
+语句
+else:
+语句
+elif 表达式4:
+语句
+else:
+语句
+```
+
+实例（和前面一样，班主任故意把缩进弄成乱序的，怕你直接复制过去运行了，在这里你能不能自己想想，缩进是怎么缩进的？给你点提示：你如果是缩进没缩对的话，可能会出现这种报错：INDENTATIONERROR: EXPECTED AN INDENTED BLOCK）（并且，这段程序，我把一个重要的符号弄丢了，你能帮忙找一下么？）
+```python
+# !/usr/bin/python3 
+num=int(input("输入一个数字：")) 
+if num%2==0
+if num%3==0: 
+  print ("你输入的数字可以整除 2 和 3") 
+else: 
+  print ("你输入的数字可以整除 2，但不能整除 3") 
+else: 
+  if num%3==0: 
+    print ("你输入的数字可以整除 3，但不能整除 2") 
+  else: 
+    print ("你输入的数字不能整除 2 和 3")
+```
+将以上程序保存到 test_if.py 文件中，执行后输出结果为：
+
+上面问题的答案你找对了么？记得在循环语句中，要缩进，if后的print要缩进四个空格（英文的），不知道你缩进没有，报错以后要记得修改你的语句，另外，我把if后面的:悄悄的去掉了，我们写代码的时候要认真一点，不然你就会发现，你的后侧程序不停的提示报错信息，你的自信心都会大打折扣的。好啦，运行一下吧。
+```
+$ python3 test.py 
+输入一个数字：6
+你输入的数字可以整除 2 和 3
+```
+
