@@ -11,3 +11,6 @@ https://www.toutiao.com/a6653607417600803341/
 # Service Mash 应用
 https://www.toutiao.com/a6758298624695730700/
 
+# 跨云部署及管理业务应用技术实践
+https://www.toutiao.com/a6615252390884934147/
+
