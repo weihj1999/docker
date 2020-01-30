@@ -7,3 +7,6 @@ https://www.toutiao.com/a6727477377032520199/
 # https://www.toutiao.com/a6653607417600803341/
 关于k8s应用部署的。可以参考学习；
 
+# https://www.toutiao.com/a6758298624695730700/
+Service Mash 应用
+
