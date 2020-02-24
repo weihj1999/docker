@@ -1,6 +1,6 @@
 # 1. Instroduction to FusionSphere Virtualization Suite
 
-1. Virtualization - The Conerstone of Cloud Software
+## 1.1. Virtualization - The Conerstone of Cloud Software
 
 - 底层虚拟化层， Virtualization
 - 基于底层虚拟化华为开发了自己的云平台服务
@@ -8,7 +8,7 @@
   - Huawei Cloud Stack，华为私有云
   - NFVI，电信云平台
   - Desktop Cloud，桌面云
-2. FusionSphere Virtualization Suite Features
+## 1.2. FusionSphere Virtualization Suite Features
 
 口号： Simplified Management and Superior Performance
 
@@ -35,13 +35,13 @@
   - High-performance network<br>
   OVS+DPDK network optimization(>20 Gbit/s) and 10GB video transmission in 4s
 
-3. Components of the FusionSphere Virtualization Suite
+## 1.3. Components of the FusionSphere Virtualization Suite
 
 FusionSphere virtualizes hardware resources using the virtualization, software deployed on physical servers so that one physical server can function as multiple virtual server. This solution maximize resource utilization by centralizing existing VMs workloads on some servers, thereby more servers to carry new applicaiton and solutions. In addition, FusionSphere can provide virtual data center technologies for enterprises and carriers and support cross-site DR capabilities.
 
 ![FS Components](images/hicp-cloudcompu-001.PNG)
 
-4. FusionSphere Server Virtualization Arichitecture
+## 1.4. FusionSphere Server Virtualization Arichitecture
 
 The FusionSphere virtualization solution consists of the server virtualization product(FusionCompute), virtualization management software (FusionManager), backup software (eBackup), and DR software(UltraVR). This suite virtualizes hardware resources into virtual resources and centrally manages the virtual resources. It provides the following capabilities basic backup and DR; lightweight operations; cloud infrastructure services; and performance management.
 - **FusionCompute**: virtualizes x86 physical servers and storage area network(SAN) devices and supports software-defined networking.
@@ -56,7 +56,7 @@ The FusionSphere virtualization solution consists of the server virtualization p
 | eBackup | Optional <br>eBackup is backup software for virtualization. It utilizes the FusionCompute snapshot function and the Changed Block Tracking(CBT) function to back up VM data. |
 | UltraVR | Optional <br>UltraVR is DR management software. Using the asynchronous remote replication feature of the underlying SAN system, UltraVR provides DR protectionfor critical VM data. |
 
-5. FusionSphere Arichitecture Features
+## 1.5. FusionSphere Arichitecture Features
 
 - On-demand resource allocation for applicaiton
 - Virtual resource SLA
@@ -67,7 +67,7 @@ The FusionSphere virtualization solution consists of the server virtualization p
 - Intelligent applicaiton management
 - Comprehensive right management
 
-6. FusionSphere applicaiton scenarios
+## 1.6. FusionSphere applicaiton scenarios
 
 - Single-Hypervisor scenario
   - An enterprise uses FusionCompute as its sole unified operations, maintenance, and management platform to operate and maintain the entire system.
@@ -81,13 +81,13 @@ The FusionSphere virtualization solution consists of the server virtualization p
 
 # 2. Instroduction to FusionCompute
 
-1. FusionCompute的定位
+## 2.1. FusionCompute的定位
 
 ![定位](images/hicp-cloudcompu-002.PNG)
 
 FusionCompute is a cloud OS. It virtualizes hardware resources and centrally manages virtual resources, and user resources. It virtualizes compute, storage, and network resources using the virtual computing, virtual stroage, and virtual network technologies. It centrally schedules and manages virtual resources over unified interfaces. FusionCompute provides high system security and reliability and reduces OPEX, helping carriers and enterprises build secure, green, and energy-efficient data centers.
 
-2. FusionCompute Arichitecture
+## 2.2. FusionCompute Arichitecture
 
 ![定位](images/hicp-cloudcompu-003.PNG)
 
@@ -100,14 +100,14 @@ FusionCompute is a cloud OS. It virtualizes hardware resources and centrally man
 | CNA | 1. provides the virtual computing function.<br> 2. manages the VMs running on compute nodes. <br> 3. manages compute, storage, and network resources on compute nodes. |
 | VRM | 1. manages block stroage resources in a cluster <br> 2. manages network resourcessuch as the IP addresses and virtual local area network (VLAN) IDs in a cluster and allocates IP addresses to VMs. <br> 3. manages the lifecycle of VMs in a cluster and distributes and migrates VMs across compute nodes. <br> 4. Dynamically adjusts resourcesand user data and provides elastic computing, storage, and IP address services. <br> 5. implements centralized management of virtual resources and user data and provides elastic computing, storage, and IP addresses services. <br> Allows O&M personel to remotely access FusionCompute through a unified web UI to implement resource monitoring, resource management, resource report query, and other O&M tasks on the entire system. |
 
-4. FusionCompute Functions - Virtual computing
+## 2.3. FusionCompute Functions - Virtual computing
 
 ![定位](images/hicp-cloudcompu-004.PNG)
 
 - FusionCompute virtualizes an x86 server into multiple VMs. End users can then install software, attach disks, modify configurations, and adjust networks on the VMs.
 - For end users, VMs can be more rapidly provisioned than physical machines, and their configurations and networking can be more easily modified. From the point of view of O&M, the maintenance cost of VMs is significantly reduced, because hardware is reused by VMs and the cloud platform supports automatic maintenance. System administrators can directly monitor resource utilization trends.
 
-5. FusionCompute Functions - Virtual Stoage
+## 2.4. FusionCompute Functions - Virtual Stoage
 
 ![定位](images/hicp-cloudcompu-005.PNG)
 
@@ -120,13 +120,13 @@ FusionCompute centrally manges the virtual storage resources provided by SAN dev
 - End users can use these virtual disks on VMs just as they would use local disks on x86 servers. For example, they can format these virtual disks, read data from or write data to them, install file systems, and install operating systems(OSs). Moreover, virtual storage supports the snapshot function and resizing, neither of which can be implemented on physical hard disks.
 - administrators only need to manage the SAN device, rather than managing spefific disks. Because SAN devices are reliable, the workloads for replacing had disks are significantly descreased for administrators. In addition, virtual storage supports various features that are not supported by physical disks, such as thin provisioning, Qos, and migration. Therefore, virtual storage has distinct cost advantages over physical disks.
 
-6. FusionCompute Functions - Virtual Network
+## 2.5. FusionCompute Functions - Virtual Network
 
 ![定位](images/hicp-cloudcompu-006.PNG)
 
 FusionCompute works with distributed virtual switches (DVSs) and provides independent network plane for VMs. different network planes are isolated by VLANs, just as they would be if physical switches were used.
 
-7. Benefits of FusionCompute
+## 2.6. Benefits of FusionCompute
 
 ![定位](images/hicp-cloudcompu-007.PNG)
 
@@ -134,7 +134,7 @@ FusionCompute works with distributed virtual switches (DVSs) and provides indepe
 
 # 3. FusionCompute Planning and Deployment
 
-1. Installation Preparations
+## 3.1. Installation Preparations
 
 - Installing a PC or labtop
   - Memory: 2GB or more
@@ -151,7 +151,7 @@ FusionCompute works with distributed virtual switches (DVSs) and provides indepe
   - Ensure that the file path does not exceed 256 characters.
   - Do not restart the host if not required during the Installation process.
 
-2. Network Planning
+## 3.2. Network Planning
 
 ![定位](images/hicp-cloudcompu-009.PNG)
 
@@ -169,17 +169,17 @@ FusionCompute works with distributed virtual switches (DVSs) and provides indepe
 - Service plance
   - This plane is used by the service data of user VMs.
 
-3. FusionCompute Installation Procedure
+## 3.3. FusionCompute Installation Procedure
 
 ![定位](images/hicp-cloudcompu-010.PNG)
 
 >备注：<br>
 VRM: virtual resource manager 类似于vmware的vcenter。
 
-4. Logical View of VRM Deployed on VMs
+## 3.4. Logical View of VRM Deployed on VMs
 
 ![定位](images/hicp-cloudcompu-011.PNG)
 
-5. Logical View of VRM Deployed on physical servers
+## 3.5. Logical View of VRM Deployed on physical servers
 
 ![定位](images/hicp-cloudcompu-012.PNG)
