@@ -9,7 +9,7 @@
 - VMs are important elements of virtual infrastructure. Virtualization allows multiple VMs with different OSs and applications installed to run on the same physical machines independently and concurrently.
 - With virtualization, you can Dynamically adjust resources and processing capabilities as needed.
 
-![compute virtualization](images/hicp-cloudcompu-013.PNG)
+![Compute Virtualization](images/hicp-cloudcompu-013.png)
 
 - Virtualization is the basis of cloud computing. Virtualization enables one physical server to run multiple VMs. The VMs share the CPU, memory, and I/O hardware resources of the physical server. However, the VMs are logically isolated from each other.
 - In compute science, virtualization refers to the creation of computing resources, that is, physical computing resources are virtualized into on or more operating environments. Virtualization software implements simulation, isolation, and sharing of resources.
@@ -17,7 +17,7 @@
 
 ### 1.1.2 Essense of Virtualization
 
-![虚拟化](images/hicp-cloudcompu-014.PNG)
+![Compute Virtualization](images/hicp-cloudcompu-014.png)
 
 - Partitioning: VMM can allocate server resources to multiple VMs. Each VM can run and independent OS (which can be the same as or different from the OSs running on other VMs on the same server) so that multiple applications can coexist on one server. Each OS gains access only to its own virtual hardware (Including the virtual NIC, virtual CPUs, and virtual memory) provided by VMM.
 - Isolation: VMs that run on the same server are isolated from each other.
@@ -62,7 +62,7 @@ Hardware-assisted Virtualization is a platform Virtualization approach that enab
 
 FusionCompute compute virtualization uses the KVM technology. CPU virtualization of KVM is a CPU-assisted full virtualization, which requires the support of CPU virtualization Features.
 
-![虚拟化](images/hicp-cloudcompu-015.PNG)
+![Compute Virtualization](images/hicp-cloudcompu-015.png)
 
 - FusionCompute uses hardware-assisted full virtualization
 - The x86 OS is designed to run directly on raw hardware devices and therefore is considered to fully occupy computer hardware. The x86 Arichitecture provides four privilege levels for OSs and applications to access hardware. Ring indicates the CPU running level. Ring O is the highest level, Ring 1 is the second highest level.
@@ -80,11 +80,11 @@ FusionCompute compute virtualization uses the KVM technology. CPU virtualization
 
 CPU Virtualization uses a timer interruption mechanism that is similar to the timer interruption mechanism applied in native OSs. The timer interruption mechanism enables the VMM when an interruption occurs. The VMM then schedules resources in accordance with the preset scheduling policy.
 
-![虚拟化](images/hicp-cloudcompu-016.PNG)
+![Compute Virtualization](images/hicp-cloudcompu-016.png)
 
 **2. Mapping between CPUs and vCPUs**
 
-![虚拟化](images/hicp-cloudcompu-017.PNG)
+![Compute Virtualization](images/hicp-cloudcompu-017.png)
 
 - The above figure shows the mapping between the numbers of vCPUs and the number of physical CPUs.
 - As an example, let's assume that this is an RH2288H V3 server using 2.6 GHz CPUs. A single server has two physical CPUs, each of which has eight cores. The Hyper-Threading technology provides two processing threads for each physical core. Therefore, each CPU has 16 threads, and the total number of vCPUs is 32 (2 x 8 x 2). This means the total CPU frequency is 83.2 GHz (32 x 2.6 GHz)
@@ -106,11 +106,11 @@ CPU Virtualization uses a timer interruption mechanism that is similar to the ti
 
 Memory virtualization refers to centrally managing physical memory of a PM and dividing the physical memory into multiple virtual memory spaces for multiple VMs. KVM uses memory virtualization to share the physical system memory and Dynamically allocates memory to VMs.
 
-![虚拟化](images/hicp-cloudcompu-018.PNG)
+![Compute Virtualization](images/hicp-cloudcompu-018.png)
 
 In KVM, the physical memory of a VM is the memory space occupied by the QEMU-KVM process. KVM uses CPU-assisted memory virtualization. On the Intel platform, memory virtualization is implemented using the Extended Page Tables (EPT) technology.
 
-![虚拟化](images/hicp-cloudcompu-019.PNG)
+![Compute Virtualization](images/hicp-cloudcompu-019.png)
 - H: Host
 - G: Guest
 - V: Virtual
@@ -127,7 +127,7 @@ AMD provides a technology called Nested Page Tables (NPT). This works in a simil
 
 ### 1.3.4 Transparent Huge Page (THP)
 
-![虚拟化](images/hicp-cloudcompu-020.PNG)
+![Compute Virtualization](images/hicp-cloudcompu-020.png)
 
 By default, the CPUs of x86 Arichitecture (including x86-32 and x86-64)
 use 4KB memory pages and also support larger memory pages. For example, the x86-64 system supports 2 MB pages， Linux 2.6 and later versions supports huge pages. If huge pages are used in the system, the number of memory pages is reduced. This reduces the number of required page tables, memory pages occupied by the page tables, required address translations, and the number of times the translation Lookaside Buffer (TLB) becomes in effective, thereby improving  memory access performance. In addition, because information required for address translation is generally stored in CPU caches, the use of huge pages reduce such information, thereby reducing the nubmer of required CPU caches and load on them. This enables more CPU caches to be used for data cache of an application and improves the overall system performance.
@@ -152,7 +152,7 @@ In QEMU/KVM, guest machine can use the following devices:
 
 ### 1.4.1 I/O Virtualization - Full Simulation
 
-![io virtualization](images/hicp-cloudcompu-021.PNG)
+![io virtualization](images/hicp-cloudcompu-021.png)
 
 1. Use software to simulate a specific device.
 - The same software interface is used, for example: PIO, MMIO, DMA or interrupt.
@@ -171,7 +171,7 @@ In QEMU/KVM, guest machine can use the following devices:
 
 ### 1.4.2 I/O Virtualization - Virtio
 
-![io virtualization](images/hicp-cloudcompu-022.PNG)
+![io virtualization](images/hicp-cloudcompu-022.png)
 
 Virtualizes special devices. Features include:
 - Special device drivers, including the frontend driver on VMs and backend driver on hosts
@@ -192,7 +192,7 @@ The advantages of Virtio ParaVirtualization are as follows:
 
 KVM VMs allow the PCI and PCI-E devices in the host machine to the guest VM so that the guest VM can exclusively access the PCI or PCI-E devices. After a device has been assigned to a guest VM by using the VT-d technology supported by the hardware, the guest VM treats the device as if it is physically connected to the VMs PCI or PCI-E bus, and the I/O interaction between the guest VM and the device is no different from interaction between two physical devices. The Hypervisor rarely needs to participate in this process.
 
-![io virtualization](images/hicp-cloudcompu-023.PNG)
+![io virtualization](images/hicp-cloudcompu-023.png)
 
 - PCI deivces assigenment enables guest machines to fully occupy PCI devices. In this way, when I/O operations are performed, the number of VM-Exits is greatly reduced, so that the VM-Exits do not get trapped in the Hypervisor. This greatly improve the I/O performance and in fact achieves almost the same performanceas a non-virtualized system. Although the performance of Virtio is good, VT-d overcomes the problems of poor compatibility and high CPU usage.
 - However, VT-d has its own disadvantages. Space on a server mainboard is limited, and the number of PCI and PCI-E devices that can be added is limited. If a host machine has a large number of guest machines, it is difficult to allocate VT-d devices to each guest machine independently. In addition, a large number of VT-d devices are independently assiged to guest machines, increasing the number of hardware devices and hardware investments costs.
@@ -201,13 +201,13 @@ KVM VMs allow the PCI and PCI-E devices in the host machine to the guest VM so t
 
 ### 1.5.1 FusionCompute Compute Virtualization Management
 
-![compute virtualization](images/hicp-cloudcompu-024.PNG)
+![compute virtualization](images/hicp-cloudcompu-024.png)
 
 # 2. Compute Virtualization Features
 
 ## 2.1 Compatible with Various Special OSs
 
-![compute virtualization](images/hicp-cloudcompu-025.PNG)
+![compute virtualization](images/hicp-cloudcompu-025.png)
 
 To be Compatible with a new OS, the PV driver must be provided by the vendor, Huawei has the PV driver R&D capability. In addition to the mainstream Windows and Linux OSs, FusionCompute is Compatible with NeoKylin OS. Certain OSs may need customized drivers.
 
@@ -216,7 +216,7 @@ To be Compatible with a new OS, the PV driver must be provided by the vendor, Hu
 
 ## 2.2 Flexible Management Arichitecture
 
-![compute virtualization](images/hicp-cloudcompu-026.PNG)
+![compute virtualization](images/hicp-cloudcompu-026.png)
 
 Technical Features and Benefits:
 - Each logical cluster supports 128 PMs, and applies to high-performance and large-scale service groups deployed on PMs, reducing the redundancy ratio.
@@ -225,7 +225,7 @@ Technical Features and Benefits:
 
 ## 2.3 GPU Virtualization and GPU passthrough
 
-![compute virtualization](images/hicp-cloudcompu-027.PNG)
+![compute virtualization](images/hicp-cloudcompu-027.png)
 
 application scenarios:
 - applications such as mechanical design software (ProE, Catia, AutoCAD), media creation tool, 3D games, and GIS in a virtualized environment
@@ -244,7 +244,7 @@ Key technologies and Features:
 
 ## 2.4 Online CPU and Memory application
 
-![compute virtualization](images/hicp-cloudcompu-028.PNG)
+![compute virtualization](images/hicp-cloudcompu-028.png)
 
 Technical Principles:
 - vRAM and vCPUs can be added offline or online and deleted offline
@@ -269,19 +269,19 @@ Benefits:
 - Excess memory can be allocate to VMs.
 - Memory Overcommitment supports such allocation:
   - For example, the total physical memory is 4GB, but the total memory allocated to the three upper-layer guest OSs reaches 6GB.
-  ![compute virtualization](images/hicp-cloudcompu-029.PNG)
+  ![compute virtualization](images/hicp-cloudcompu-029.png)
 
 Three main scenarios about Memory:
 
 - Memory sharing, copy-on-write<br>
 Memory sharing: multiple VMs share the same physical memory block (marked in blue), and the VMs only read data from the memory block. Copy-on-write: When a VM needs to write data to its memory block, another memory block (marked in orange) is allocated to the VM to write the data and the mapping between the allocated block and the VM is created.<br>
-![compute virtualization](images/hicp-cloudcompu-030.PNG)
+![compute virtualization](images/hicp-cloudcompu-030.png)
 - Memory swapping<br>
 Memory swapping: Memory data that is not retrieved by the VM for a long time is swapped to a disk, and a mapping between the memory data and the disk is created. When the VM needs to access the memory data again, the memory data is returned from the disk back to the memory block.<br>
-![compute virtualization](images/hicp-cloudcompu-031.PNG)
+![compute virtualization](images/hicp-cloudcompu-031.png)
 - Memory Bubble<br>
 Memory Bubble: Hypervisor releases memory of idle VMs for use by VMs with higher memory requirements, improving memory usage. This is done using memory bubble technology.<br>
-![compute virtualization](images/hicp-cloudcompu-032.PNG)
+![compute virtualization](images/hicp-cloudcompu-032.png)
 
 Technical Highlights:
 - HUAWEI virtualization platform increases the memory Overcommitment ratio to 150% using the smart memory Overcommitment technology, which outperforms peer vendor C.
@@ -291,7 +291,7 @@ Benefits:
 
 Another important feature about memory: **NUMA Affinity scheduling**
 
-![compute virtualization](images/hicp-cloudcompu-033.PNG)
+![compute virtualization](images/hicp-cloudcompu-033.png)
 
 NUMA：(Non Uniform Memory Access)即非一致内存访问架构。
 
@@ -309,7 +309,7 @@ CPU访问不同类型节点内存的速度是不相同的：本地节点>邻居�
 
 ## 2.6 VM HA
 
-![compute virtualization](images/hicp-cloudcompu-034.PNG)  
+![compute virtualization](images/hicp-cloudcompu-034.png)  
 
 - VM live migration is the basis of dynamic resources scheduling and distributed power management.
 - Supports fault detection and recovery for hosts, virtualization platforms, and VMs.
@@ -320,18 +320,18 @@ CPU访问不同类型节点内存的速度是不相同的：本地节点>邻居�
 
 **VM Live Migration**
 
-![compute virtualization](images/hicp-cloudcompu-035.PNG)  
+![compute virtualization](images/hicp-cloudcompu-035.png)  
 
 **Dynamic Resource Scheduling (DRS)**
 
-![compute virtualization](images/hicp-cloudcompu-036.PNG)
+![compute virtualization](images/hicp-cloudcompu-036.png)
 
 - DRS is also called compute resource scheduling automation.
 - FusionCompute computing clusters are deployed on VIMS shared devices. DRS performs real-time monitoring of resource usage for each computing node in a cluster, and uses the VM live migration function to intelligently migrate VMs with high workloads to other nodes with sufficient resources, thereby balancing resource use and ensuring that resources are sufficient. DRS provides the foundation for automatic load balancing.
 
 **Distributed Power Management (DPM)**
 
-![compute virtualization](images/hicp-cloudcompu-037.PNG)
+![compute virtualization](images/hicp-cloudcompu-037.png)
 
 
 **IMC**
@@ -345,6 +345,5 @@ CPU访问不同类型节点内存的速度是不相同的：本地节点>邻居�
 
 **Rule Gropp**
 
-![compute virtualization](images/hicp-cloudcompu-038.PNG)
+![compute virtualization](images/hicp-cloudcompu-038.png)
   
-
