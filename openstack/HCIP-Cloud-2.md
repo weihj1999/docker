@@ -9,7 +9,7 @@
 - VMs are important elements of virtual infrastructure. Virtualization allows multiple VMs with different OSs and applications installed to run on the same physical machines independently and concurrently.
 - With virtualization, you can Dynamically adjust resources and processing capabilities as needed.
 
-![coompute virtualization](images/hicp-cloudcompu-013.PNG)
+![compute virtualization](images/hicp-cloudcompu-013.PNG)
 
 - Virtualization is the basis of cloud computing. Virtualization enables one physical server to run multiple VMs. The VMs share the CPU, memory, and I/O hardware resources of the physical server. However, the VMs are logically isolated from each other.
 - In compute science, virtualization refers to the creation of computing resources, that is, physical computing resources are virtualized into on or more operating environments. Virtualization software implements simulation, isolation, and sharing of resources.
