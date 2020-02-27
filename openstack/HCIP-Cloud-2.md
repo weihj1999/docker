@@ -346,4 +346,5 @@ CPU访问不同类型节点内存的速度是不相同的：本地节点>邻居�
 **Rule Gropp**
 
 ![compute virtualization](images/hicp-cloudcompu-038.PNG)
-  
+ 
+ 
