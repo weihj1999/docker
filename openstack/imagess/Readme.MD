@@ -1,0 +1,1 @@
+Storing pictures and images
