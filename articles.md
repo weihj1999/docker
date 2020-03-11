@@ -16,3 +16,8 @@ https://www.toutiao.com/a6615252390884934147/
 
 # “孩子很聪明，就是不认真学”，老师的言外之意你真的听懂了么？
 https://www.toutiao.com/a6647653619199902215/
+
+# 一个看起来很牛的AI开源项目介绍
+
+https://cloud.tencent.com/developer/article/1594249
+
