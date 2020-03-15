@@ -8,7 +8,7 @@ https://www.jetbrains.com/go/download/download-thanks.html?platform=windows
 2. 从这里获取补丁 jetbrains-agent 并将它放置到 GoLand安装目录的\bin目录下
 
 
-3, 剩余步骤参考 https://juejin.im/post/5df9ebad51882512657bb253的激活教程，
+3, 剩余步骤参考[这个](https://juejin.im/post/5df9ebad51882512657bb253)的激活教程，
 
 在 “Help” -> “Edit Custom VM Options …”。步骤，我这里添加的例子是
 
