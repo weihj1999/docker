@@ -39,5 +39,5 @@ https://www.jetbrains.com/go/download/download-thanks.html?platform=windows
 
 4. 实际上已经完成了激活
 
-![激活](imamges/goland-001.png)
+![激活](images/goland-001.png)
 
