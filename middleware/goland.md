@@ -5,6 +5,8 @@ goland 破解
 
 https://www.jetbrains.com/go/download/download-thanks.html?platform=windows
 
+![激活](images/goland-001.png)
+
 2. 从这里获取补丁 jetbrains-agent 并将它放置到 GoLand安装目录的\bin目录下
 
 
@@ -39,5 +41,5 @@ https://www.jetbrains.com/go/download/download-thanks.html?platform=windows
 
 4. 实际上已经完成了激活
 
-![激活](images/goland-001.png)
+![激活](images/goland-002.png)
 
