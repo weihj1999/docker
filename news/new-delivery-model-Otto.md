@@ -11,3 +11,14 @@ I am not quite convinced that drones will ever be routinely delivering packages 
 
 https://www.telekom.com/en/company/digital-responsibility/business-model-digitization
 
+
+DT One APP的开发故事
+
+https://medium.com/mito/a-case-study-on-how-we-built-deutsche-telekoms-new-self-care-application-4d5e69d80975
+
+
+德电集团构建One API的故事
+
+https://inform.tmforum.org/casestudy/deutsche-telekom-uses-open-apis-european-unification/
+
+
