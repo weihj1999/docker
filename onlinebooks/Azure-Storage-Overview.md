@@ -87,8 +87,53 @@ RA-GRA: Read-access geo-redundant Storage
 
 ![Create a Storage Account](./images/create-storage-account05.png)
 
+## 安全认证
+
+1. AK/SK
+
+- Storage access keys in the Azure key Vault
+- Regenerate access keys regularly
+- Document dependencies on storage account
+
+2. Shared Access  Signatures （SAS）
+
+3. access policy
+
+4. Encrption
+
+## Azure Storage Files
+
+1. network file share
+- net use
+- sudo mount -t cifs ...
+- \\server\sharedfolder
+- Not a windows server, thus no active directory ACLs
+- Subset of SMB 2.1 and 3.0 protocols
+- REST API similar to Blog API
+- REST and SMB concurrently, respect shared mode
+
+example:
+
+![file share](./images/storage-access01.png)
+![file share](./images/storage-access02.png)
+![file share](./images/storage-access03.png)
+![file share](./images/storage-access04.png)
+- connect a storage files
 
 
+- Query stroage files
+
+- Container properties
+  - Systems properties
+  - user-defined metadata
+  - Set MetadataAsync
+
+- AzCopy
+  - Optimized data transfter
+  - Synchronous and asynchronous copy
+  
+![azcopy](./images/azcopy01.png)
+![azcopy](./images/azcopy02.png)
 
 
 
