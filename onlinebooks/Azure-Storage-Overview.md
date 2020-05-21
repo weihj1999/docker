@@ -77,15 +77,15 @@ RA-GRA: Read-access geo-redundant Storage
 
 ## Create a Stroage account
 
-![](../images/create-storage-account01.png)
+![Create a Storage Account](../images/create-storage-account01.png)
 
-![](../images/create-storage-account02.png)
+![Create a Storage Account](../images/create-storage-account02.png)
 
-![](../images/create-storage-account03.png)
+![Create a Storage Account](../images/create-storage-account03.png)
 
-![](../images/create-storage-account04.png)
+![Create a Storage Account](../images/create-storage-account04.png)
 
-![](../images/create-storage-account05.png)
+![Create a Storage Account](../images/create-storage-account05.png)
 
 
 
