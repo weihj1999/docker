@@ -118,6 +118,7 @@ example:
 ![file share](./images/storage-access02.png)
 ![file share](./images/storage-access03.png)
 ![file share](./images/storage-access04.png)
+
 - connect a storage files
 
 
