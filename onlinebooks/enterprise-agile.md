@@ -55,8 +55,11 @@ Agile Teams： focus on being self-organized, predictive, and driven to deliver
 Agile Enterprise： focus on identifying organizational culture and making a widespread change.
 
 举例来说，一个组织里面大概有5到6个agile团队，这些团队平常通过Scrum，极限编程，Kanban， Lean Starup等等方式运转，每个团队都运作的很成功，团队成员也很满意，这对于高质量的软件产品提供帮助。<br>
+
 ![agile mindset](./images/agile005.png)
+
 当企业的组织扩大后，更多不同角色，任务的团队想要采用agile，如何确保成功呢？<br>
+
 ![agile mindset](./images/agile006.png)
 
 可能是20,30个agile团队，甚至上百个agile团队呢？这个时候首先要明确一些基本的常识：
@@ -140,25 +143,25 @@ tranformation意味着变化，你需要彻底的采用不同的方法来思考�
 
 企业文化变化推荐的首要技巧：
 
-![devops](./images/devops004.png)
+![devops](./images/devops004.png)<br>
 
 企业文化管理模型（Laloux：模型）
 
-![devops](./images/devops005.png)
+![devops](./images/devops005.png)<br>
 
 Slowly progress through each level until reaching the teal level;
 
-建议：
-![devops](./images/devops006.png)
+建议：<br>
+![devops](./images/devops006.png)<br>
 
-![devops](./images/devops007.png)
+![devops](./images/devops007.png)<br>
 
 2. 在企业层面运转devops的三个维度（技术，人员及流程，生态）
 
 - 技术 (Technology)
-  - 测试自动化
+  - 测试自动化<br>
   ![devops](./images/devops008.png)<br>
-  >建议1：
+  >建议1：<br>
   ![devops](./images/devops009.png)<br>
 
 业务部署要实现Reliable， Quickly validated， Reversible
@@ -277,7 +280,7 @@ VSM有两大任务：
 
 ![devops](./images/devops015.png)<br>
 
-做VSM的色调贴 (Colorful Notes):
+做VSM的记事贴 (Colorful Notes):
 
 ![devops](./images/devops016.png)<br>
 
