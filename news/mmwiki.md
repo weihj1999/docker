@@ -1,5 +1,6 @@
 
-# MMWiki社区文体提交模板日下
+# MMWiki社区文体提交模板如下
+
 ```
 xxxxx这里是问题描述xxxx
 
