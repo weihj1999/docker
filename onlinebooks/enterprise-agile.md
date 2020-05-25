@@ -54,9 +54,9 @@ Agile Teams： focus on being self-organized, predictive, and driven to deliver
 
 Agile Enterprise： focus on identifying organizational culture and making a widespread change.
 
-举例来说，一个组织里面大概有5到6个agile团队，这些团队平常通过Scrum，极限编程，Kanban， Lean Starup等等方式运转，每个团队都运作的很成功，团队成员也很满意，这对于高质量的软件产品提供帮助。
+举例来说，一个组织里面大概有5到6个agile团队，这些团队平常通过Scrum，极限编程，Kanban， Lean Starup等等方式运转，每个团队都运作的很成功，团队成员也很满意，这对于高质量的软件产品提供帮助。<br>
 ![agile mindset](./images/agile005.png)
-当企业的组织扩大后，更多不同角色，任务的团队想要采用agile，如何确保成功呢？
+当企业的组织扩大后，更多不同角色，任务的团队想要采用agile，如何确保成功呢？<br>
 ![agile mindset](./images/agile006.png)
 
 可能是20,30个agile团队，甚至上百个agile团队呢？这个时候首先要明确一些基本的常识：
@@ -66,11 +66,11 @@ Agile Enterprise： focus on identifying organizational culture and making a wid
 
 一个普遍的事实是，Agile从来就没有针对一个大规模的组织量身定做过针对性的设计。2001年，Agile的方法首先应用于软件开发，主要是帮助研发团队怎么开发更好的软件。 自此之后agile方法兴起，人们开始思考怎么把这种方法应用到现代企业。 agile从帮助开发软件，到企业文化的agile转化，从而促进其工作。
 
-![agile mindset](./images/agile007.png)
+![agile mindset](./images/agile007.png)<br><br>
 
 为了适应这种发展趋势，一系列的工具，方法论诞生了。
 
-![agile mindset](./images/agile008.png)
+![agile mindset](./images/agile008.png)<br>
 
 企业agile意味着组织变化
 
@@ -86,7 +86,7 @@ Agile Enterprise： focus on identifying organizational culture and making a wid
 
 ![agile mindset](./images/agile010.png)
 
-有四种流行的企业Agile框架：
+有四种流行的企业Agile框架：<br>
 ![agile mindset](./images/agile011.png)
 
 “Agile frameworks are designed to create radical change”
