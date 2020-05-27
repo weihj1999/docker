@@ -1,3 +1,6 @@
+开课之前，思考一下这个模型（纯手工制品）
+![my model](./images/models.png)
+
 # 企业Agile简介
 
 很多公司都在采用agile思想来构建软件，因为
