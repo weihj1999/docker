@@ -21,3 +21,7 @@ https://www.toutiao.com/a6647653619199902215/
 
 https://cloud.tencent.com/developer/article/1594249
 
+# 关于IOT的分析报告
+
+https://pages.eiu.com/rs/753-RIQ-438/images/18062020_CTE%20Report_Final.pdf
+
